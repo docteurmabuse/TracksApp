@@ -50,11 +50,18 @@ android {
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'com.google.android.material:material:1.5.0'
     implementation "androidx.compose.ui:ui:$compose_version"
     implementation 'androidx.compose.material3:material3:1.0.0-alpha04'
+    implementation 'androidx.compose.material:material:1.2.0-alpha02'
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
+    implementation "androidx.constraintlayout:constraintlayout-compose:1.0.0"
+
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.0'
     implementation 'androidx.activity:activity-compose:1.4.0'
+
+    // Compose image loading library which fetches and displays network images with Glide
+    implementation "com.github.skydoves:landscapist-coil:1.4.5"
 
     // Kotlin Coroutines
     implementation'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
@@ -65,9 +72,6 @@ dependencies {
 
     // OKhttp
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
-
-    //The Paging library helps you load and display pages of data from a larger dataset from local storage or over network.
-    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
 
     //Timber for easier Logs
     implementation 'com.jakewharton.timber:timber:4.7.1'
