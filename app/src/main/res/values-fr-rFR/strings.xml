@@ -5,4 +5,5 @@
     <string name="wait">Merci de patienter</string>
     <string name="track_image_description">Image du morceau</string>
     <string name="default_error_message">Une erreur est survenue. Merci de réessayer plus tard.</string>
+    <string name="track">Détail du morceau</string>
 </resources>

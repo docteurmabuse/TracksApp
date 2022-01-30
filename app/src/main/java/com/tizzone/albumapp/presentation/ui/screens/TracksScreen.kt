@@ -54,7 +54,7 @@ fun TracksScreen(
     } else if (state.data.isNotEmpty()) {
         Scaffold(
             topBar = {
-                MyTopAppBar()
+                MyTopAppBar(R.string.tracks)
             },
             containerColor = MaterialTheme.colorScheme.surface,
             modifier = Modifier.padding(bottom = 5.dp)

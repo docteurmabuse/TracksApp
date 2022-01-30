@@ -4,4 +4,5 @@
     <string name="wait">Please wait</string>
     <string name="track_image_description">Track\'s image</string>
     <string name="default_error_message">Something went wrong. Please try later</string>
+    <string name="track">Track</string>
 </resources>

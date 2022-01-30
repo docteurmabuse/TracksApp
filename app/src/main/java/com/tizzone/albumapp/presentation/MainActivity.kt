@@ -20,7 +20,7 @@ import androidx.navigation.navArgument
 import com.tizzone.albumapp.presentation.presentation.Screen
 import com.tizzone.albumapp.presentation.theme.TracksAppTheme
 import com.tizzone.albumapp.presentation.ui.TracksViewModel
-import com.tizzone.albumapp.presentation.ui.screens.TrackScreen
+import com.tizzone.albumapp.presentation.ui.screens.TrackDetails
 import com.tizzone.albumapp.presentation.ui.screens.TracksScreen
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -59,7 +59,7 @@ class MainActivity : ComponentActivity() {
                             )
                         ) {
                             navBackStackEntry ->
-                            TrackScreen(
+                            TrackDetails(
                                 trackTitle = navBackStackEntry.arguments?.getString("trackTitle"),
                                 url = navBackStackEntry.arguments?.getString("trackUrl")
                             )
