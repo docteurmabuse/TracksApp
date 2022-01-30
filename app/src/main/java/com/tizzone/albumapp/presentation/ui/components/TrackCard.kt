@@ -1,5 +1,6 @@
 package com.tizzone.albumapp.presentation.ui.components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -7,6 +8,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.SnackbarDefaults.backgroundColor
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -21,16 +23,21 @@ import com.tizzone.albumapp.R
 import com.tizzone.albumapp.domain.model.Track
 
 @Composable
-fun TrackCard(track: Track, modifier: Modifier) {
+fun TrackCard(
+    track: Track,
+    modifier: Modifier,
+    onClick: () -> Unit,
+) {
     Card(
         modifier = Modifier
             // The space between each card and the other
             .padding(10.dp)
             .fillMaxWidth()
-            .wrapContentHeight(),
+            .wrapContentHeight()
+            .clickable(onClick = onClick),
         shape = MaterialTheme.shapes.medium,
-        elevation = 5.dp,
-        backgroundColor = MaterialTheme.colors.surface
+        elevation = 8.dp,
+        backgroundColor = MaterialTheme.colors.surface,
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically

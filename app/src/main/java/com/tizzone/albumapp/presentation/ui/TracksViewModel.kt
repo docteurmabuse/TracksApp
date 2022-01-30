@@ -12,16 +12,16 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class AlbumsViewModel
+class TracksViewModel
 @Inject constructor(
     private val getAlbumTitles: GetTracks
 ) : ViewModel() {
-    fun init() {
-        fetchAllAlbums()
-    }
 
     private var _state = MutableStateFlow(TrackViewState(isLoading = false))
     val state: StateFlow<TrackViewState> get() = _state
+    init {
+        fetchAllAlbums()
+    }
     private fun fetchAllAlbums() {
         viewModelScope.launch {
             getAlbumTitles()

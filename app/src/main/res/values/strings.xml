@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">TracksApp</string>
     <string name="tracks">Tracks</string>
-    <string name="wait">Pease wait</string>
+    <string name="wait">Please wait</string>
     <string name="track_image_description">Track\'s image</string>
     <string name="default_error_message">Something went wrong. Please try later</string>
 </resources>

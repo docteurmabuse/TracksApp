@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TracksApp</string>
+    <string name="tracks">Vos titres d\'albums</string>
+    <string name="wait">Merci de patienter</string>
+    <string name="track_image_description">Image du morceau</string>
+    <string name="default_error_message">Une erreur est survenue. Merci de réessayer plus tard.</string>
+</resources>

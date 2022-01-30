@@ -14,8 +14,7 @@
         android:theme="@style/Theme.AlbumApp">
         <activity
             android:name=".presentation.MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.AlbumApp">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
