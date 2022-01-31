@@ -71,8 +71,14 @@ dependencies {
     //Retrofit : A type-safe HTTP client for Android
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
     // OKhttp
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
+
+    //MockWebServer
+    testImplementation 'com.squareup.okhttp3:okhttp:4.9.3'
+    testImplementation 'com.squareup.okhttp3:mockwebserver:4.9.3'
+    androidTestImplementation 'com.jakewharton.espresso:okhttp3-idling-resource:1.0.0'
 
     //Timber for easier Logs
     implementation 'com.jakewharton.timber:timber:4.7.1'

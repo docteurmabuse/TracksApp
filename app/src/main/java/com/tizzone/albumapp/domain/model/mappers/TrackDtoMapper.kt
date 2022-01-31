@@ -1,10 +1,10 @@
 package com.tizzone.albumapp.domain.model.mappers
 
-import com.tizzone.albumapp.data.network.model.AlbumDtoModel
+import com.tizzone.albumapp.data.network.model.TrackDtoModel
 import com.tizzone.albumapp.domain.model.Track
 
-class AlbumDtoMapper : ApiMapper<AlbumDtoModel, Track> {
-    override fun mapToDomainModel(itemDto: AlbumDtoModel): Track {
+class TrackDtoMapper : ApiMapper<TrackDtoModel, Track> {
+    override fun mapToDomainModel(itemDto: TrackDtoModel): Track {
         return Track(
             id = itemDto.id!!,
             title = itemDto.title!!,
@@ -12,7 +12,7 @@ class AlbumDtoMapper : ApiMapper<AlbumDtoModel, Track> {
             thumbnailUrl = itemDto.thumbnailUrl!!
         )
     }
-    fun toDomainAlbumsList(initial: List<AlbumDtoModel>): List<Track> {
+    fun toDomainAlbumsList(initial: List<TrackDtoModel>): List<Track> {
         return initial.map { mapToDomainModel(it) }
     }
 }

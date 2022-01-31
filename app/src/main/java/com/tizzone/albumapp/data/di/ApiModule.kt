@@ -3,8 +3,8 @@ package com.tizzone.albumapp.data.di
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.tizzone.albumapp.BuildConfig
-import com.tizzone.albumapp.data.network.AlbumsApi
-import com.tizzone.albumapp.domain.model.mappers.AlbumDtoMapper
+import com.tizzone.albumapp.data.network.TracksApi
+import com.tizzone.albumapp.domain.model.mappers.TrackDtoMapper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -42,18 +42,18 @@ object ApiModule {
 
     @Provides
     @Singleton
-    fun providesApi(okHttpClient: OkHttpClient, BASE_URL: String): AlbumsApi {
+    fun providesApi(okHttpClient: OkHttpClient, BASE_URL: String): TracksApi {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
             .client(okHttpClient)
             .build()
-            .create(AlbumsApi::class.java)
+            .create(TracksApi::class.java)
     }
 
     @Provides
     @Singleton
-    fun providesAlbumDtoMapper(): AlbumDtoMapper {
-        return AlbumDtoMapper()
+    fun providesAlbumDtoMapper(): TrackDtoMapper {
+        return TrackDtoMapper()
     }
 }

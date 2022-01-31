@@ -2,7 +2,7 @@ package com.tizzone.albumapp.data.network.model
 
 import com.google.gson.annotations.SerializedName
 
-data class AlbumDtoModel(
+data class TrackDtoModel(
     @field:SerializedName("albumId")
     val albumId: String? = null,
 
