@@ -5,6 +5,8 @@ import com.tizzone.albumapp.domain.data.TrackViewState
 import com.tizzone.albumapp.domain.model.mappers.TrackDtoMapper
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import okio.IOException
+import retrofit2.HttpException
 import javax.inject.Inject
 
 sealed interface TracksRepository {
@@ -20,7 +22,9 @@ class TracksRepositoryImpl @Inject constructor(
             emit(TrackViewState(isLoading = true))
             val albumsTitlesList = mapper.toDomainAlbumsList(tracksApi.getAsyncAlbums())
             emit(TrackViewState(data = albumsTitlesList))
-        } catch (e: Exception) {
+        } catch (e: HttpException) {
+            emit(TrackViewState(message = e.message ?: "Unknown error"))
+        } catch (e: IOException) {
             emit(TrackViewState(message = e.message ?: "Unknown error"))
         }
     }
