@@ -25,7 +25,7 @@ class TracksRepositoryImpl @Inject constructor(
         } catch (e: HttpException) {
             emit(TrackViewState(message = e.message ?: "Unknown error"))
         } catch (e: IOException) {
-            emit(TrackViewState(message = e.message ?: "Unknown error"))
+            emit(TrackViewState(message = e.message ?: "No Internet error"))
         }
     }
 }

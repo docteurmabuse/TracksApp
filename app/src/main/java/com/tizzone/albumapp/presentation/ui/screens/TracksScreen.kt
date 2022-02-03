@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -19,7 +18,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.tizzone.albumapp.R
 import com.tizzone.albumapp.presentation.ui.TracksViewModel
-import com.tizzone.albumapp.presentation.ui.components.MyTopAppBar
 import com.tizzone.albumapp.presentation.ui.components.TrackList
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -45,15 +43,10 @@ fun TracksScreen(
             )
         }
     } else if (state.data.isNotEmpty()) {
-        Scaffold(
-            topBar = {
-                MyTopAppBar(R.string.tracks)
-            },
-            containerColor = MaterialTheme.colorScheme.surface,
-            modifier = Modifier.padding(bottom = 5.dp)
-        ) {
-            TrackList(state = state, onNavigateToTrackDetail = onNavigateToTrackDetail)
-        }
+        TrackList(
+            state = state,
+            onNavigateToTrackDetail = onNavigateToTrackDetail
+        )
     } else {
         Column(
             modifier = Modifier

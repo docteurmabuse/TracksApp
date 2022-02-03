@@ -3,7 +3,7 @@ package com.tizzone.albumapp.data
 import com.tizzone.albumapp.domain.model.Track
 
 object MockWebserverResponse {
-    val mockTrackList = listOf<Track>(
+    val mockTrackList = listOf(
         Track(
             "10",
             "delectus",

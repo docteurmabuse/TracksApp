@@ -16,11 +16,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.skydoves.landscapist.CircularReveal
 import com.skydoves.landscapist.coil.CoilImage
 import com.tizzone.albumapp.R
 import com.tizzone.albumapp.domain.model.Track
+import com.tizzone.albumapp.presentation.theme.TracksAppTheme
 
 @Composable
 fun TrackCard(
@@ -61,5 +63,21 @@ fun TrackCard(
                 fontWeight = FontWeight.Bold
             )
         }
+    }
+}
+@Preview(showBackground = true)
+@Composable
+fun TrackCardPreview() {
+    TracksAppTheme {
+        TrackCard(
+            track = Track(
+                "10",
+                "delectus",
+                "https://via.placeholder.com/600/d6dd28",
+                "https://via.placeholder.com/600/d6dd28",
+            ),
+            modifier = Modifier,
+            onClick = {}
+        )
     }
 }

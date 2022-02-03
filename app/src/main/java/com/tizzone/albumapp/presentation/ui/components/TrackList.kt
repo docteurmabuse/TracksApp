@@ -6,9 +6,12 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.tizzone.albumapp.domain.data.TrackViewState
 import com.tizzone.albumapp.presentation.presentation.Screen
+import com.tizzone.albumapp.presentation.theme.TracksAppTheme
+import com.tizzone.albumapp.utils.fakeTrackList
 import java.net.URLEncoder
 import java.nio.charset.StandardCharsets
 
@@ -32,5 +35,18 @@ fun TrackList(
                 }
             )
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun TrackListPreview() {
+    TracksAppTheme {
+        TrackList(
+            state = TrackViewState(
+                data = fakeTrackList
+            ),
+            onNavigateToTrackDetail = {}
+        )
     }
 }
